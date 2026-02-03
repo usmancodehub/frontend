@@ -988,7 +988,7 @@
             const message = document.getElementById('statusMessage');
 
             try {
-                const response = await fetch(`https://my-portfolio-snowy-three-13.vercel.app/api/health`);
+                const response = await fetch(`${API_BASE_URL}/health`);
                 if (response.ok) {
                     message.textContent = 'Server: Connected';
                     toast.style.borderColor = 'var(--glass-border)';
@@ -1012,7 +1012,7 @@
         // Load projects from backend
         async function loadProjects() {
             try {
-                const response = await fetch(`https://my-portfolio-snowy-three-13.vercel.app/api/projects`);
+                const response = await fetch(`${API_BASE_URL}/projects`);
                 const data = await response.json();
 
                 if (response.ok && data.success) {
@@ -1100,7 +1100,7 @@
             formMessage.textContent = '';
 
             try {
-                const response = await fetch(`https://my-portfolio-snowy-three-13.vercel.app/api/contact`, {
+                const response = await fetch(`${API_BASE_URL}/contact`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
